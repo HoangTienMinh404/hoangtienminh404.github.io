@@ -4,10 +4,20 @@
   <meta charset="UTF-8">
   <title>Giới Thiệu Về Tôi</title>
   <link rel="icon" type="image/png" sizes="32x32" href="https://kinhtevadubao.vn/stores/news_dataimages/kinhtevadubaovn/042018/16/08/huan-luyen-phat-trien-ban-than-nghe-hot-cua-thoi-dai-28-.2135.jpg">
+
   <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html, body {
+      min-height: 100%;
+    }
 
     body {
+      min-height: 100vh;
       background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
       color: #fff;
       font-family: Arial, sans-serif;
@@ -33,25 +43,28 @@
       white-space: pre-line;
     }
 
-    b { color: #00ff37; }
+    b {
+      color: #00ff37;
+    }
 
-    /* Intro ở giữa */
+    /* Intro */
     .intro {
       display: flex;
       justify-content: center;
       align-items: center;
       text-align: center;
-      min-height: 1vh; /* nửa màn hình */
+      margin-bottom: 40px;
       font-size: 1.3rem;
     }
 
-    /* Sao lấp lánh */
+    /* Sao */
     .star {
       position: absolute;
       background: white;
       border-radius: 50%;
       opacity: 0.8;
       animation: twinkle 2s infinite alternate;
+      pointer-events: none;
     }
 
     @keyframes twinkle {
@@ -68,6 +81,7 @@
       opacity: 0.8;
       transform: rotate(45deg);
       animation: shoot 3s linear infinite;
+      pointer-events: none;
     }
 
     @keyframes shoot {
@@ -82,13 +96,14 @@
     }
   </style>
 </head>
+
 <body>
   <h1>🌟 Giới Thiệu Về Tôi 🌟</h1>
 
-  <!-- Intro giữa màn hình -->
   <div class="intro">
     <p>Xin chào, tôi là <b>Hoàng Tiến Minh</b> và tôi lấy biệt danh là <b>HoangTienMinh404</b>.</p>
   </div>
+
   <p>
 Tôi sinh ngày 29 tháng 8 năm 2011, và lúc tôi code nên web này là 22 tháng 8, vậy chỉ còn 7 ngày nữa là đến sinh nhật tôi.  
 
@@ -104,16 +119,15 @@ Tôi là một học sinh của trường THCS Mỹ Xá của tỉnh Nam Định
     
 - Năm lớp 8 : Huế Già, xin lỗi vì đã nói như vậy, nhưng đây là một giáo viên tôi ghét nhất trong tất cả 8 năm học vừa qua từ tiểu học đến trung học, cô ấy không có khả năng dạy học gì cả, gần như là 100% phụ thuộc vào máy tính và giáo án có sẵn, gần như cô không có kiến thức gì cả, thậm chí không phải nói quá nhưng kiến thức của cô còn thua cả học sinh. Cách giải quyết vấn đề trong và ngoài lớp của cô rất thiếu sự công bằng, gần như cô chỉ làm theo ý cô chứ không tuân theo luật lệ hay quy tắc gì cả và cô rất hay trù dập học sinh và nói xấu học sinh với những lớp khác. Phải nói đây là một những giáo viên tệ nhất tôi từng học, nếu được thì tôi muốn gửi đến nhà trường rằng hãy đuổi việc cô Huế đi vì gần như cô không có một chút kiến thức gì, lâu lâu tôi còn nhìn lén được cô dùng VietJack để giảng dạy bài cho học sinh.
     
-- Năm lớp 9 : Thầy Mạnh, đây là giáo viên chủ nhiệm đầu tiên của tôi dạy môn toán trong suốt 8 năm học vừa qua :), thầy cũng còn trẻ nhưng thầy dạy khá giỏi, thầy cũng có tính cách khá bựa vì thầy còn trẻ, còn vào năm học thì chưa biết được :).  
+- Năm lớp 9 : Thầy Mạnh, đây là giáo viên chủ nhiệm đầu tiên của tôi dạy môn toán trong suốt 8 năm học vừa qua :), thầy cũng còn trẻ nhưng thầy dạy khá giỏi, thầy cũng có tính cách khá bựa vì thầy còn trẻ, còn vào năm học thì chưa biết được :).
   </p>
 
-  <!-- Tạo sao random + sao băng -->
   <script>
-    // Tạo random sao
+    // Tạo sao
     for (let i = 0; i < 200; i++) {
-      let star = document.createElement("div");
+      const star = document.createElement("div");
       star.className = "star";
-      let size = Math.random() * 3 + "px";
+      const size = Math.random() * 3 + "px";
       star.style.width = size;
       star.style.height = size;
       star.style.top = Math.random() * 100 + "%";
@@ -122,17 +136,15 @@ Tôi là một học sinh của trường THCS Mỹ Xá của tỉnh Nam Định
       document.body.appendChild(star);
     }
 
-    // Tạo sao băng random
+    // Sao băng
     setInterval(() => {
-      let shootingStar = document.createElement("div");
+      const shootingStar = document.createElement("div");
       shootingStar.className = "shooting-star";
       shootingStar.style.top = Math.random() * 50 + "%";
       shootingStar.style.left = Math.random() * 100 + "%";
       document.body.appendChild(shootingStar);
 
-      setTimeout(() => {
-        shootingStar.remove();
-      }, 3000);
+      setTimeout(() => shootingStar.remove(), 3000);
     }, 4000);
   </script>
 </body>
