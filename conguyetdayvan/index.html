@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cô Giáo Dạy Văn Của Tôi</title>
+
+  <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/3135/3135755.png">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      min-height: 100vh;
+      background:
+        linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.75)),
+        url("https://cdn2.fptshop.com.vn/unsafe/1920x0/filters:format(webp):quality(75)/tranh_ve_20_11_6479e09d26.png");
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+
+      color: #fff;
+      font-family: Arial, sans-serif;
+      line-height: 1.8;
+      padding: 40px;
+    }
+
+    /* Mobile */
+    @media (max-width: 768px) {
+      body {
+        padding: 20px;
+        background:
+          linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.7)),
+          url("https://anhchibi.com/wp-content/uploads/2024/12/co-giao-hoc-sinh-chibi.jpg");
+        background-size: cover;
+        background-position: center;
+        background-attachment: scroll;
+      }
+    }
+
+    .container {
+      max-width: 800px;
+      margin: auto;
+      padding: 25px;
+      border-radius: 20px;
+
+      /* nền kính mờ nhẹ */
+      background: linear-gradient(
+        rgba(0, 0, 0, 0.25),
+        rgba(0, 0, 0, 0.5)
+      );
+
+      backdrop-filter: blur(6px);
+      box-shadow: 0 0 20px rgba(0,0,0,0.4);
+    }
+    h1 {
+      text-align: center;
+      font-size: 2.4rem;
+      margin-bottom: 20px;
+      color: #ffd54f;
+      text-shadow: 0 0 12px #ffd54f;
+    }
+
+    .intro {
+      text-align: center;
+      font-size: 1.15rem;
+      margin-bottom: 20px;
+      color: #90caf9;
+    }
+
+    p {
+      font-size: 1.05rem;
+      margin-bottom: 18px;
+      text-align: justify;
+      transition: 0.3s;
+    }
+
+    p:hover {
+      transform: scale(1.01);
+    }
+
+    b {
+      color: #00ffcc;
+    }
+
+    /* Mobile text tối ưu */
+    @media (max-width: 768px) {
+      h1 {
+        font-size: 1.8rem;
+      }
+
+      p {
+        font-size: 0.98rem;
+      }
+
+      .container {
+        padding: 18px;
+        backdrop-filter: blur(4px);
+      }
+    }
+
+    /* sao nhẹ */
+    .star {
+      position: absolute;
+      background: white;
+      border-radius: 50%;
+      opacity: 0.6;
+      animation: twinkle 2s infinite alternate;
+      pointer-events: none;
+    }
+
+    @keyframes twinkle {
+      from { opacity: 0.2; }
+      to { opacity: 1; }
+    }
+
+  </style>
+</head>
+
+<body>
+
+<div class="container">
+
+  <h1>📖 Cô Nguyệt Dạy Văn 📖</h1>
+
+  <div class="intro">
+    Một trong những cô giáo để lại trong em nhiều ấn tượng sâu sắc nhất chính là cô Hoàng Minh Nguyệt dạy môn Ngữ Văn lớp 9.
+  </div>
+
+  <p>Cô là một trong những cô giáo có thể khiến học sinh chúng em có một tình cảm không thể đong đếm được như những cô giáo khác, mỗi khi bọn em phạm phải sai lầm, cô không mắng chửi hay đánh đập như các cô giáo khác. Mà cô lại có những lời lẽ hết sức dịu dàng, không la mắng, không trách móc học sinh, cô  luôn luôn nhắc nhở, giúp đỡ và động viên chúng em trong quá trình học tập. Phải nói thật  không phải cô giáo nào cũng có tính cách khiến chúng em trân trọng và cảm phục cô như vậy, mặc dù cô có lúc nổi giận khi chúng em không làm bài hoặc mắc sai lầm nhưng cô không bao giờ chửi mắng mà luôn dùng những câu nói động viên, khích lệ chúng em trong quá trình học tập. Em cảm thấy rất may mắn khi đã được gặp một người tốt như cô, năm nay là năm học cuối cấp 2, thời gian không còn nhiều để chúng em và cô sát cánh bên nhau nữa... Chúng em sẽ hứa đạt được điểm cao, chăm chỉ học tập để đỗ được vào ngôi trường cấp 3 mà chúng em mong ước cũng như là không phụ sự tâm huyết và những lời lẽ chân thành của cô dành cho chúng em. Chúng em xin cảm ơn cô vì một năm học lớp 9 - Một bước ngoặt dẫn đến thành công của cuộc đời chúng em ❤️.
+
+</div>
+
+<script>
+  // sao nhẹ (không lag)
+  for (let i = 0; i < 70; i++) {
+    const star = document.createElement("div");
+    star.className = "star";
+    const size = Math.random() * 2 + "px";
+    star.style.width = size;
+    star.style.height = size;
+    star.style.top = Math.random() * 100 + "%";
+    star.style.left = Math.random() * 100 + "%";
+    star.style.animationDuration = (Math.random() * 2 + 1) + "s";
+    document.body.appendChild(star);
+  }
+</script>
+
+</body>
+</html>
